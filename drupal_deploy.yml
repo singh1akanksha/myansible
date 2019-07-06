@@ -1,7 +1,15 @@
 ---
 - hosts: drupal
+  sudo: yes
   tasks:
       - name: Create file
         file:
             path: /tmp/etlhive.txt
             state: touch
+      - name: pull from git
+        git:
+           repo: https://github.com/singh1akanksha/drupalaws.git
+           dest: /opt/lampp/htdocs/drupal8
+           update: yes
+           force: yes
+           version: master
