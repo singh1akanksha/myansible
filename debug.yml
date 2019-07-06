@@ -1,0 +1,18 @@
+---
+- hosts: all
+  vars:
+    Your_name: Test
+  tasks:
+   - name: get command output
+     command: lvv
+     register: login_user
+     ignore_errors: True 
+
+   - name: Debug output
+     debug:
+       #msg="Logged in as user {{login_user.stdout}}"
+       var: ansible_distribution
+
+   - name: Debug output
+     debug:
+        msg: "Hi, greetings from {{Your_name}}" 

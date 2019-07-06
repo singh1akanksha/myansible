@@ -1,0 +1,3 @@
+---
+- name: install {{ pkg_name }} package
+  yum: name={{ pkg_name }} state=latest 

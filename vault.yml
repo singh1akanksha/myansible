@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks: 
+    - name: Run a program
+      command: echo $HOME
+      register: output_dir
+      ignore_errors: yes
+
+    - name: Print value
+      debug: msg="dir is {{ output_dir.stdout }}" 

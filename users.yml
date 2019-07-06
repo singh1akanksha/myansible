@@ -1,0 +1,13 @@
+---
+- hosts: server
+  sudo: yes
+  tasks:
+    - name: cretae users
+      user:
+        name: etlhive
+        shell: /sbin/nologin
+
+    - name: Install package
+      yum:
+        name: zlib
+        state: installed

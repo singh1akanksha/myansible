@@ -1,0 +1,30 @@
+---
+- hosts: dev
+  sudo: yes
+  vars: 
+    Enter_your_name: vipin
+  tasks:
+    - name: Create files
+      file:
+         path: /var/www/html
+         state: directory 
+    - name: Message template 
+      template:
+        src: sample_template.j2
+        dest: /var/www/html/index.html
+    - name:
+      yum:
+        name: "{{item}}"
+        state: installed
+      with_items:
+        - httpd
+        - telnet
+        - git
+      notify:
+        - start httpd service
+
+  handlers:
+    - name:
+      service: 
+        name: httpd
+        state: started  

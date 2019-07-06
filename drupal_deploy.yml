@@ -1,0 +1,7 @@
+---
+- hosts: drupal
+  tasks:
+      - name: Create file
+        file:
+            path: /tmp/etlhive.txt
+            state: touch

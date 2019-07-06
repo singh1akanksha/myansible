@@ -1,0 +1,7 @@
+---
+-  hosts: dev
+   tasks:
+     - name: Create files
+       file:
+         path: /tmp/etlhive.txt
+         state: touch
