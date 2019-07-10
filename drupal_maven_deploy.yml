@@ -9,7 +9,7 @@
       - name: pull from git
         git:
            repo: https://github.com/singh1akanksha/druplmaven.git
-           dest: /opt/lampp/htdocs/druplmaven/src/main/drupalaws
+           dest: /opt/lampp/htdocs/druplmaven
            update: yes
            force: yes
            version: master
