@@ -1,0 +1,16 @@
+---
+- hosts: drupal
+  sudo: yes
+  tasks:
+      - name: Create file
+        file:
+            path: /tmp/etlhive1.txt
+            state: touch
+      - name: pull from git
+        git:
+           repo: https://github.com/singh1akanksha/druplmaven.git
+           dest: /opt/lampp/htdocs/druplmaven/src/main/drupalaws
+           update: yes
+           force: yes
+           version: master
+
